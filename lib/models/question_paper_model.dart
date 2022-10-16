@@ -4,14 +4,14 @@ class QuestionPaperModel {
   String? imageUrl;
   String? description;
   int? timeSeconds;
-  List<Questions>? questions;
+  List<Questions> questions;
 
   QuestionPaperModel({required this.id,
     required this.title,
     this.imageUrl,
     this.description,
     this.timeSeconds,
-    this.questions});
+   required this.questions});
 
   QuestionPaperModel.fromJson(Map<String, dynamic> json)
       :
