@@ -1,4 +1,5 @@
 import 'package:edu_app/bindings/initial_bindings.dart';
+import 'package:edu_app/configs/themes/app_light_theme.dart';
 import 'package:edu_app/firebase_options.dart';
 import 'package:edu_app/routes/AppRoutes.dart';
 import 'package:edu_app/screens/introduction/introduction.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: LightTheme().buildLightTheme(),
       getPages: AppRoutes.routes(),
     );
   }
