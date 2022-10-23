@@ -1,3 +1,4 @@
+import 'package:edu_app/screens/home/home_screen.dart';
 import 'package:edu_app/widgets/app_circle_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,9 @@ class AppIntroductionScreen extends StatelessWidget {
               const Text("This is a study app. You can use it as you want. If you understand how this works, you would be able to scale it. "),
               SizedBox(height: 40,),
               AppCircleButton(
-                  onTap: ()=>null,
+                  onTap: ()=>{
+                    Get.toNamed("/home")
+            },
                   child:  Icon(Icons.arrow_forward, size: 35,))
             ],
           ),

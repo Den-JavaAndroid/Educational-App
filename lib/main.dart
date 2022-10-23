@@ -1,5 +1,6 @@
 import 'package:edu_app/bindings/initial_bindings.dart';
 import 'package:edu_app/configs/themes/app_light_theme.dart';
+import 'package:edu_app/controllers/theme_controller.dart';
 import 'package:edu_app/firebase_options.dart';
 import 'package:edu_app/routes/AppRoutes.dart';
 import 'package:edu_app/screens/introduction/introduction.dart';
@@ -10,8 +11,9 @@ import 'package:get/get.dart';
 
 import 'data_uploader_screen.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   InitialBindings().dependencies();
   runApp(MyApp());
 }
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: LightTheme().buildLightTheme(),
+      theme: Get.find<ThemeController>().lightTheme,
       getPages: AppRoutes.routes(),
     );
   }

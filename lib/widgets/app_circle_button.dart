@@ -17,6 +17,7 @@ class AppCircleButton extends StatelessWidget {
       shape: CircleBorder(),
       child: InkWell(
         child: child,
+        onTap: onTap,
       ),
     );
   }
